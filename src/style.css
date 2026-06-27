@@ -18,9 +18,9 @@ body {
   outline-offset: 3px;
 }
 
-.section-kicker { @apply text-xs uppercase tracking-[0.35em] text-forest/70; }
-.premium-card { @apply rounded-[2rem] border border-gold/15 bg-white/80 shadow-soft backdrop-blur-md; }
-.glass-panel { @apply border border-white/40 bg-white/70 backdrop-blur-xl shadow-soft; }
+.section-kicker { @apply text-xs uppercase tracking-[0.35em] text-forest/80; }
+.premium-card { @apply rounded-[2rem] border border-gold/15 bg-white/90 shadow-soft backdrop-blur-md; }
+.glass-panel { @apply border border-white/40 bg-white/80 backdrop-blur-xl shadow-soft; }
 .gold-line { background: linear-gradient(90deg, transparent, #c9a24a, transparent); }
 
 .reveal {
