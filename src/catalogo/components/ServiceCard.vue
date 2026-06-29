@@ -7,9 +7,6 @@
       <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold text-white transition duration-300 sm:h-14 sm:w-14 sm:text-xl">
         {{ category.icon }}
       </div>
-      <span class="rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white sm:px-3 sm:text-xs">
-        {{ selectedTypeNames.length }}/{{ category.types.length }}
-      </span>
     </div>
 
     <div class="flex-1">
