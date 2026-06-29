@@ -1,6 +1,6 @@
 <template>
   <div id="servicos" class="mt-8 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
-    <ServiceCard
+    <AgendamentoCard
       v-for="category in filteredCategories"
       :key="category.id"
       :category="category"
@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import ServiceCard from './ServiceCard.vue'
+import AgendamentoCard from './AgendamentoCard.vue'
 
 defineProps({
   filteredCategories: Array,

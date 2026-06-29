@@ -13,7 +13,7 @@
           <div class="text-[11px] uppercase tracking-[0.35em] text-slate-500">Médica Veterinária</div>
         </div>
       </div>
-      <a v-if="showCta" href="#contato" class="rounded-full bg-forest px-5 py-3 text-sm font-semibold text-white shadow-glow transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:bg-forest/90 hover:shadow-soft">Agendar Consulta</a>
+      <RouterLink v-if="showCta" to="/agendamento" class="rounded-full bg-forest px-5 py-3 text-sm font-semibold text-white shadow-glow transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:bg-forest/90 hover:shadow-soft">Agendar consulta</RouterLink>
     </nav>
   </header>
 </template>

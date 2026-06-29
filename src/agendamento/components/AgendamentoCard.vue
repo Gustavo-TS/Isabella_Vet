@@ -1,6 +1,6 @@
 <template>
   <article
-    class="reveal flex h-full min-h-[360px] flex-col rounded-[1.75rem] border p-5 shadow-soft transition duration-300 hover:-translate-y-1 sm:min-h-[390px] sm:p-6"
+    class="reveal fade-on-scroll flex h-full min-h-[360px] flex-col rounded-[1.75rem] border p-5 shadow-soft transition duration-300 hover:-translate-y-1 sm:min-h-[390px] sm:p-6"
     :class="isSelected ? 'border-gold bg-forest text-white hover:bg-forest' : 'border-forest/15 bg-forest text-white hover:bg-forest/95'"
   >
     <div class="flex items-start justify-between gap-3 sm:gap-4">

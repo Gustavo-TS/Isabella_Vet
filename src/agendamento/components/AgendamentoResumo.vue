@@ -2,7 +2,7 @@
   <section id="resumo" class="reveal rounded-[2rem] border border-forest/15 bg-forest p-6 shadow-soft backdrop-blur-xl">
     <div class="flex flex-col gap-2 border-b border-white/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <p class="section-kicker text-goldSoft/80">Serviços selecionados</p>
+        <p class="section-kicker text-goldSoft/80">Agendamento selecionado</p>
         <h2 class="mt-2 text-2xl font-semibold text-white">{{ selectedServices.length }} item(ns)</h2>
       </div>
       <span class="w-fit rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">{{ selectedServices.length }} escolhidos</span>
@@ -17,15 +17,15 @@
 
         <div class="max-h-72 overflow-y-auto pr-1" v-if="selectedServices.length">
           <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              <li v-for="item in selectedServices" :key="item.id" class="flex items-start justify-between gap-3 rounded-2xl border border-white/10 bg-white/10 p-3">
-                <div class="min-w-0">
-                  <p class="truncate text-sm font-medium text-white">{{ item.name }}</p>
-                  <p class="text-xs text-white/60">{{ item.category }}</p>
-                </div>
-                <button type="button" class="shrink-0 text-xs font-semibold text-goldSoft hover:text-white" @click="$emit('toggle', item)">
-                  Remover
-                </button>
-              </li>
+            <li v-for="item in selectedServices" :key="item.id" class="flex items-start justify-between gap-3 rounded-2xl border border-white/10 bg-white/10 p-3">
+              <div class="min-w-0">
+                <p class="truncate text-sm font-medium text-white">{{ item.name }}</p>
+                <p class="text-xs text-white/60">{{ item.category }}</p>
+              </div>
+              <button type="button" class="shrink-0 text-xs font-semibold text-goldSoft hover:text-white" @click="$emit('toggle', item)">
+                Remover
+              </button>
+            </li>
           </ul>
         </div>
 

@@ -1,11 +1,15 @@
 <template>
-  <section class="min-h-screen bg-hero px-4 pb-32 pt-20 text-slate-900 sm:px-6 lg:px-8">
-    <SiteHeader :menu="[]" :scrolled="false" :transparent="true" :show-cta="false" />
-    <div class="mx-auto flex max-w-7xl flex-col gap-10">
-      <CatalogoHero />
-      <!-- <CatalogoFilters v-model:activeFilter="activeFilter" :filters="filters" /> -->
+  <section class="reveal min-h-screen bg-hero px-4 pb-32 pt-20 text-slate-900 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-6 flex max-w-7xl">
+      <RouterLink to="/" class="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-forest px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+        <span aria-hidden="true">←</span>
+        Voltar
+      </RouterLink>
+    </div>
 
-      <CatalogoGrid
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <AgendamentoHero />
+      <AgendamentoGrid
         :filtered-categories="filteredCategories"
         :expanded-category-id="expandedCategoryId"
         :selected-type-names-by-category="selectedTypeNamesByCategory"
@@ -13,19 +17,17 @@
         @select-type="selectType"
       />
 
-      <CatalogoResumo :selected-services="selectedServices" :form="form" :fields="fields" @toggle="removeItem" @send="openWhatsApp" />
+      <AgendamentoResumo :selected-services="selectedServices" :form="form" :fields="fields" @toggle="removeItem" @send="openWhatsApp" />
     </div>
   </section>
 </template>
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
-import SiteHeader from '../landing-page/components/SiteHeader.vue'
-import CatalogoHero from '../catalogo/components/CatalogoHero.vue'
-// import CatalogoFilters from '../catalogo/components/CatalogoFilters.vue'
-import CatalogoGrid from '../catalogo/components/CatalogoGrid.vue'
-import CatalogoResumo from '../catalogo/components/CatalogoResumo.vue'
-import { categories, filters, fields, whatsappNumber } from './catalogoData.js'
+import AgendamentoHero from './components/AgendamentoHero.vue'
+import AgendamentoGrid from './components/AgendamentoGrid.vue'
+import AgendamentoResumo from './components/AgendamentoResumo.vue'
+import { categories, filters, fields, whatsappNumber } from './agendamentoData.js'
 
 const activeFilter = ref('Todas')
 const expandedCategoryId = ref('')

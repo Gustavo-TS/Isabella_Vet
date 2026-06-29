@@ -8,7 +8,6 @@ export const categories = [
     name: 'Consultas',
     icon: '🩺',
     description: 'Atendimentos gerais e avaliações clínicas.',
-    note: 'Toque para ver os tipos',
     types: [
       'Consulta veterinaria domiciliar',
       'Consulta de rotina',
@@ -22,7 +21,6 @@ export const categories = [
     name: 'Vacinas',
     icon: '💉',
     description: 'Vacinação e reforço imunológico.',
-    note: 'Toque para ver os tipos',
     types: [
       'Vacinacao para caes',
       'Vacinacao para gatos',
@@ -35,7 +33,6 @@ export const categories = [
     name: 'Exames',
     icon: '🧪',
     description: 'Apoio diagnóstico e coletas.',
-    note: 'Toque para ver os tipos',
     types: [
       'Coleta de sangue domiciliar',
       'Exames laboratoriais',
@@ -48,7 +45,6 @@ export const categories = [
     name: 'Procedimentos',
     icon: '🩹',
     description: 'Procedimentos simples e cuidados pontuais.',
-    note: 'Toque para ver os tipos',
     types: [
       'Curativos',
       'Aplicacao de medicacao',
@@ -61,7 +57,6 @@ export const categories = [
     name: 'Preventivo',
     icon: '🛡️',
     description: 'Ações para prevenção e bem-estar.',
-    note: 'Toque para ver os tipos',
     types: [
       'Controle de vermifugacao',
       'Controle de pulgas e carrapatos',
@@ -74,7 +69,6 @@ export const categories = [
     name: 'Acompanhamento',
     icon: '📋',
     description: 'Acompanhamentos contínuos e suporte.',
-    note: 'Toque para ver os tipos',
     types: [
       'Pos-operatorio',
       'Acompanhamento de tratamento',
@@ -87,7 +81,6 @@ export const categories = [
     name: 'Orientações',
     icon: '💡',
     description: 'Orientações práticas para o tutor.',
-    note: 'Toque para ver os tipos',
     types: [
       'Orientacao para novos tutores',
       'Cuidados com filhotes',

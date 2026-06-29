@@ -23,15 +23,12 @@
 
 
             <div class="mt-5 flex flex-col gap-4 sm:flex-row">
-              <a
-                :href="whatsappLink"
-                target="_blank"
-                rel="noopener noreferrer"
+              <RouterLink
+                to="/agendamento"
                 class="group mt-4 inline-flex items-center gap-3 rounded-full border border-gold/15 bg-white px-4 py-2 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-soft"
               >
-                <img src="/image/whatsapp.png" alt="WhatsApp" class="h-5 w-5 object-contain transition duration-300 group-hover:scale-110" loading="lazy" />
-                <span class="text-sm font-medium text-forest">Agendar pelo WhatsApp</span>
-              </a>
+                <span class="text-sm font-medium text-forest">Ir para Agendamento</span>
+              </RouterLink>
               <a
                 :href="instagramLink"
                 target="_blank"
@@ -39,7 +36,7 @@
                 class="group mt-4 inline-flex items-center gap-3 rounded-full border border-gold/15 bg-white px-4 py-2 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-soft"
               >
                 <img src="/image/instagram.png" alt="Instagram" class="h-5 w-5 object-contain transition duration-300 group-hover:scale-110" loading="lazy" />
-                <span class="text-sm font-medium text-forest">Agendar pelo Instagram</span>
+                <span class="text-sm font-medium text-forest">Ver perfil no Instagram</span>
               </a>
             </div>
 

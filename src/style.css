@@ -33,6 +33,16 @@ body {
   transform: translateY(0);
 }
 
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .85s ease, transform .85s ease;
+}
+.fade-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .gold-gradient {
   background: linear-gradient(135deg, #f8e8b6 0%, #c9a24a 48%, #8f6a1f 100%);
 }
@@ -51,5 +61,11 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .fade-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
