@@ -11,13 +11,17 @@
       <AgendamentoHero />
       <AgendamentoGrid
         :filtered-categories="filteredCategories"
-        :expanded-category-id="expandedCategoryId"
-        :selected-type-names-by-category="selectedTypeNamesByCategory"
+        :selected-services-by-category="selectedServicesByCategory"
         @toggle="toggleCategory"
-        @select-type="selectType"
       />
 
-      <AgendamentoResumo :selected-services="selectedServices" :form="form" :fields="fields" @toggle="removeItem" @send="openWhatsApp" />
+      <AgendamentoResumo
+        :selected-services="selectedServices"
+        :form="form"
+        :fields="fields"
+        @toggle="removeItem"
+        @send="openWhatsApp"
+      />
     </div>
   </section>
 </template>
@@ -27,10 +31,8 @@ import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import AgendamentoHero from './components/AgendamentoHero.vue'
 import AgendamentoGrid from './components/AgendamentoGrid.vue'
 import AgendamentoResumo from './components/AgendamentoResumo.vue'
-import { categories, filters, fields, whatsappNumber } from './agendamentoData.js'
+import { categories, fields, whatsappNumber } from './agendamentoData.js'
 
-const activeFilter = ref('Todas')
-const expandedCategoryId = ref('')
 const selectedItems = ref([])
 
 const form = reactive({
@@ -42,37 +44,30 @@ const form = reactive({
   observations: '',
 })
 
-const filteredCategories = computed(() => {
-  if (activeFilter.value === 'Todas') return categories
-  return categories.filter((category) => category.name === activeFilter.value)
-})
-
+const filteredCategories = computed(() => categories)
 const selectedServices = computed(() => selectedItems.value)
 
-const selectedTypeNamesByCategory = computed(() =>
+const selectedServicesByCategory = computed(() =>
   selectedItems.value.reduce((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = []
-    acc[item.category].push(item.name)
+    acc[item.id] = [item.name]
     return acc
   }, {})
 )
 
 const toggleCategory = (category) => {
-  expandedCategoryId.value = expandedCategoryId.value === category.id ? '' : category.id
-}
-
-const selectType = ({ category, type }) => {
-  const existing = selectedItems.value.some((item) => item.id === `${category.id}-${type}`)
-  if (!existing) {
-    selectedItems.value = [
-      ...selectedItems.value,
-      {
-        id: `${category.id}-${type}`,
-        name: type,
-        category: category.name,
-      },
-    ]
+  const existing = selectedItems.value.some((item) => item.id === category.id)
+  if (existing) {
+    selectedItems.value = selectedItems.value.filter((item) => item.id !== category.id)
+    return
   }
+
+  selectedItems.value = [
+    ...selectedItems.value,
+    {
+      id: category.id,
+      name: category.name,
+    },
+  ]
 }
 
 const removeItem = (item) => {
@@ -88,10 +83,10 @@ const buildMessage = () => {
     '',
     `Meu nome é: ${form.tutorName || '[não informado]'}`,
     `Nome do pet: ${form.petName || '[não informado]'}`,
-    `Meu pet é um: ${form.species || '[cao/gato]'}`,
-    `Região: ${form.neighborhood || '[preencher regiao]'}`,
-    `Preferência de horário: ${form.bestTime || '[preencher horario]'}`,
-    `Observações: ${form.observations || '[sem observacoes]'}`,
+    `Meu pet é um: ${form.species || '[cão/gato]'}`,
+    `Região: ${form.neighborhood || '[preencher região]'}`,
+    `Preferência de horário: ${form.bestTime || '[preencher horário]'}`,
+    `Observações: ${form.observations || '[sem observações]'}`,
     '',
     'Aguardo retorno. Obrigado(a)!',
   ]

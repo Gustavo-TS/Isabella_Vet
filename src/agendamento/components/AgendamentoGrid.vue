@@ -4,11 +4,8 @@
       v-for="category in filteredCategories"
       :key="category.id"
       :category="category"
-      :expanded="expandedCategoryId === category.id"
-      :selected-type-names="selectedTypeNamesByCategory[category.id] || []"
-      :is-selected="(selectedTypeNamesByCategory[category.id] || []).length > 0"
+      :is-selected="(selectedServicesByCategory[category.id] || []).length > 0"
       @toggle="$emit('toggle', $event)"
-      @select-type="$emit('select-type', $event)"
     />
   </div>
 </template>
@@ -18,9 +15,8 @@ import AgendamentoCard from './AgendamentoCard.vue'
 
 defineProps({
   filteredCategories: Array,
-  expandedCategoryId: String,
-  selectedTypeNamesByCategory: Object,
+  selectedServicesByCategory: Object,
 })
 
-defineEmits(['toggle', 'select-type'])
+defineEmits(['toggle'])
 </script>

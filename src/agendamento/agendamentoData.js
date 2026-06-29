@@ -1,92 +1,47 @@
 export const whatsappNumber = '11940247017'
 
-export const filters = ['Todas', 'Consultas', 'Vacinas', 'Exames', 'Procedimentos', 'Preventivo', 'Acompanhamento', 'Orientacoes']
-
 export const categories = [
   {
     id: 'consultas',
     name: 'Consultas',
     icon: '🩺',
     description: 'Atendimentos gerais e avaliações clínicas.',
-    types: [
-      'Consulta veterinaria domiciliar',
-      'Consulta de rotina',
-      'Consulta para filhotes',
-      'Consulta geriatrica',
-      'Retorno veterinario',
-    ],
   },
   {
     id: 'vacinas',
     name: 'Vacinas',
     icon: '💉',
     description: 'Vacinação e reforço imunológico.',
-    types: [
-      'Vacinacao para caes',
-      'Vacinacao para gatos',
-      'Reforco vacinal',
-      'Avaliacao pre-vacinal',
-    ],
   },
   {
     id: 'exames',
     name: 'Exames',
     icon: '🧪',
     description: 'Apoio diagnóstico e coletas.',
-    types: [
-      'Coleta de sangue domiciliar',
-      'Exames laboratoriais',
-      'Avaliacao clinica',
-      'Check-up preventivo',
-    ],
   },
   {
     id: 'procedimentos',
     name: 'Procedimentos',
     icon: '🩹',
     description: 'Procedimentos simples e cuidados pontuais.',
-    types: [
-      'Curativos',
-      'Aplicacao de medicacao',
-      'Retirada de pontos',
-      'Limpeza de feridas simples',
-    ],
   },
   {
     id: 'preventivo',
     name: 'Preventivo',
     icon: '🛡️',
     description: 'Ações para prevenção e bem-estar.',
-    types: [
-      'Controle de vermifugacao',
-      'Controle de pulgas e carrapatos',
-      'Orientacao nutricional',
-      'Avaliacao de peso',
-    ],
   },
   {
     id: 'acompanhamento',
     name: 'Acompanhamento',
     icon: '📋',
     description: 'Acompanhamentos contínuos e suporte.',
-    types: [
-      'Pos-operatorio',
-      'Acompanhamento de tratamento',
-      'Acompanhamento de pets idosos',
-      'Acompanhamento de doencas cronicas',
-    ],
   },
   {
     id: 'orientacoes',
     name: 'Orientações',
     icon: '💡',
     description: 'Orientações práticas para o tutor.',
-    types: [
-      'Orientacao para novos tutores',
-      'Cuidados com filhotes',
-      'Cuidados com gatos',
-      'Adaptacao de ambiente',
-    ],
   },
 ]
 

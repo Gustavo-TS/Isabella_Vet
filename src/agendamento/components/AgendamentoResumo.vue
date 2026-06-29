@@ -11,7 +11,7 @@
     <div class="mt-6 grid gap-6">
       <div class="min-w-0 rounded-[1.5rem] border border-white/10 bg-white/10 p-4">
         <div class="mb-4 flex items-center justify-between text-sm text-white/80">
-          <span>Itens escolhidos</span>
+          <span>Serviços escolhidos</span>
           <span class="font-semibold text-white">{{ selectedServices.length }}</span>
         </div>
 
@@ -20,7 +20,6 @@
             <li v-for="item in selectedServices" :key="item.id" class="flex items-start justify-between gap-3 rounded-2xl border border-white/10 bg-white/10 p-3">
               <div class="min-w-0">
                 <p class="truncate text-sm font-medium text-white">{{ item.name }}</p>
-                <p class="text-xs text-white/60">{{ item.category }}</p>
               </div>
               <button type="button" class="shrink-0 text-xs font-semibold text-goldSoft hover:text-white" @click="$emit('toggle', item)">
                 Remover
